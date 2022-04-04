@@ -1,0 +1,222 @@
+/* remove all previous padding and margin */
+*{
+    padding: 0px;
+    margin:0px;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(209, 199, 199);
+}
+/* navigation section */
+.navList{
+    background-color: tomato;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px 15px;
+    list-style: none;
+}
+.navList li a{
+    color: white;
+    text-decoration: none;
+}
+/* to make image responsive */
+.responsive{
+    max-width:100%;
+    height: auto;
+}
+/* using grid for layout */
+.container{
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-areas:
+                         'navList navList navList navList'
+                         'picture picture picture side1'
+                         'picture picture picture side2'
+                         'division division division side2'
+                         'division division division side3'
+                         'division2 division2 division2 side3'
+                         'division2 division2 division2 side4'
+                         'division3 division3 division3 side4'
+                         'division3 division3 division3 side5'
+                         'division4 division4 division4 side5';
+}
+nav{
+    grid-area: navList;
+}
+.picture{
+    grid-area: picture;
+}
+.sideBar1{
+    grid-area: side1;
+}
+.sideBar2{
+    grid-area: side2;
+}
+.division{
+    grid-area: division;
+}
+.sideBar3{
+    grid-area: side3;
+}
+.sideBar4{
+    grid-area: side4;
+}
+.sideBar5{
+    grid-area: side5;
+    height: 40rem;
+}
+
+.division2{
+    grid-area: division2;
+}
+.division3{
+    grid-area: division3;
+}
+.division4{
+    grid-area: division4;
+}
+
+
+.picture img,.division2 img,.division4 img{
+    width:88rem;
+}
+.mr-btm{
+    margin: 5px;
+}
+
+.styleBlck{
+    background-color: white;
+    padding: 10px 15px;
+    line-height: 20px;
+}
+/* second section working with flex */
+.division{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+  
+}
+.division3{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1rem;  
+}
+/* media query */
+@media only screen and (max-width:300px) {
+    body {
+        background-color: red;
+    }
+        .container{
+            grid-template-areas:
+            'navList navList navList navList'
+            'picture picture picture picture'
+            'side1 side1 side1 side1'
+            'division division division division'
+            'side2 side2 side2 side2'
+            'division2 division2 division2 division2'
+            'side3 side3 side3 side3'
+            'division3 division3 division3 division3'
+            'side4 side4 side4 side4'
+            'division4 division4 division4 division4'
+            'side5 side5 side5 side5';
+        }
+        .sideBar1{
+            display: none;
+        }
+        .sideBar2{
+            display: none;
+        }
+        .sideBar3{
+            display: none;
+        }
+        .sideBar4{
+            display: none;
+        }
+        .sideBar5{
+            display: none;
+        }
+
+        h1{
+            font-size: 18px;
+        }
+        p{
+            font-size: 15px;
+        }
+        .navList{
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .navList li{
+            padding: 5px;
+        }
+    }
+
+@media only screen and (min-width: 300px) and (max-width:500px) {
+    body {
+        background-color: blue;
+    }
+    .container{
+        grid-template-areas:
+        'navList navList navList navList'
+        'picture picture picture picture'
+        'side1 side1 side1 side1'
+        'division division division division'
+        'side2 side2 side2 side2'
+        'division2 division2 division2 division2'
+        'side3 side3 side3 side3'
+        'division3 division3 division3 division3'
+        'side4 side4 side4 side4'
+        'division4 division4 division4 division4'
+        'side5 side5 side5 side5';
+    }
+    h1{
+        font-size: 18px;
+    }
+    p{
+        font-size: 15px;
+    }
+}
+@media (min-width: 500px) and (max-width:870px) {
+    body {
+        background-color: yellow;
+    }
+        .container{
+        grid-template-areas:
+        'navList navList navList navList'
+        'picture picture picture picture'
+        'side1 side1 side1 side1'
+        'division division division division'
+        'side2 side2 side2 side2'
+        'division2 division2 division2 division2'
+        'side3 side3 side3 side3'
+        'division3 division3 division3 division3'
+        'side4 side4 side4 side4'
+        'division4 division4 division4 division4'
+        'side5 side5 side5 side5';
+    }
+    h1{
+        font-size: 18px;
+    }
+    p{
+        font-size: 15px;
+    }
+}
+@media (min-width: 870px) and (max-width:1315px) {
+    body {
+        background-color: green;
+    }
+    .container{
+        grid-template-areas:
+        'navList navList navList navList'
+        'picture picture picture side1'
+        'division division division side2'
+        'division2 division2 division2 side3'
+        'division3 division3 division3 side4'
+        'division4 division4 division4 side5';
+    }
+}
+
+
